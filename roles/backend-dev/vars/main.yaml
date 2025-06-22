@@ -1,0 +1,4 @@
+mysql_root_pwd: ExpenseApp1
+mysql_host: mysql-dev.naveenrajoli.site
+COMPONENT: backend
+APP_LOCATION: /app

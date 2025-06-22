@@ -1,5 +1,5 @@
 - name: Installing nginx for expense project
-  hosts: frontend_servers
+  hosts: all
   become: yes
   roles:
-  - frontend
+  - "{{ COMPONENT }}-{{ ENVIRONMENT  }}"
