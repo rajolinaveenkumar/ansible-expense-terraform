@@ -20,7 +20,7 @@
     state: directory
 
 - name: copy files to html
-  annsible.builtin.copy:
+  ansible.builtin.copy:
     src: .  # means: "copy everything inside the files/ folder of this role"
     dest: /usr/share/nginx/html/
     recurse: yes # copies all files and subfolders
