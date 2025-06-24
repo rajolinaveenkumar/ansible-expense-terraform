@@ -1,8 +1,0 @@
-proxy_http_version 1.1;
-
-location /api/ { proxy_pass http://expense.app-dev.naveen.rajoli.site/; }
-
-location /health {
-  stub_status on;
-  access_log off;
-}

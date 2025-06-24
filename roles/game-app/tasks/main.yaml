@@ -27,11 +27,6 @@
     # remote_src: yes
 
 
-- name: copy expense config
-  ansible.builtin.template:
-    src: expense.conf.j2
-    dest: /etc/nginx/default.d/expense.conf
-    
 
 - name: Start and enable the nginx service 
   ansible.builtin.service:
