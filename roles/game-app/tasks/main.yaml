@@ -1,0 +1,38 @@
+- name: Installing nginx
+  ansible.builtin.dnf:
+    name: nginx
+    state: installed
+
+- name: Start and enable the nginx service 
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true
+
+- name: Removing nginx default content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+    
+- name: creating html
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
+
+- name: copy files to html
+  annsible,builtin.copy:
+    src: .  # means: "copy everything inside the files/ folder of this role"
+    dest: /usr/share/nginx/html/
+    recurse: yes # copies all files and subfolders
+
+
+- name: copy expense config
+  ansible.builtin.template:
+    src: expense.conf.j2
+    dest: /etc/nginx/default.d/expense.conf
+    
+
+- name: Start and enable the nginx service 
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
