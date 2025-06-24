@@ -23,7 +23,7 @@
   ansible.builtin.copy:
     src: html/  # means: "copy everything inside the files/ folder of this role"
     dest: /usr/share/nginx/html/
-    recurse: yes # copies all files and subfolders
+    # recurse: yes # copies all files and subfolders
     remote_src: yes
 
 
